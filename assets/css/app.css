@@ -175,6 +175,47 @@ h1.text-2xl.font-bold.mb-4 {
   background: #128c7e !important;
 }
 
+@media (max-width: 600px) {
+  body {
+    background: #111b21;
+    overflow: hidden;
+  }
+
+  .wa-container {
+    max-width: 100%;
+    margin: 0;
+    border-radius: 0;
+    height: 100dvh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  #messages {
+    flex: 1;
+    overflow-y: auto;
+  }
+
+  #message-form {
+    flex-wrap: wrap;
+    padding: 6px 8px;
+    gap: 6px;
+  }
+
+  #name-input {
+    flex: 1 1 100%;
+    border-radius: 20px !important;
+  }
+
+  #message-input {
+    flex: 1;
+  }
+
+  .msg-sent,
+  .msg-received {
+    max-width: 85%;
+  }
+}
+
 @import "phoenix-colocated/chat/colocated.css";
 @source "../css";
 @source "../js";
