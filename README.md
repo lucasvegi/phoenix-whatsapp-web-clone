@@ -35,7 +35,7 @@ Before getting started, make sure you have the following installed:
 
 ```bash
 # Clone the repository
-git clone https://github.com/your-username/phoenix-whatsapp-web-clone.git
+git clone https://github.com/lucasvegi/phoenix-whatsapp-web-clone.git
 cd phoenix-whatsapp-web-clone
 
 # Install dependencies
