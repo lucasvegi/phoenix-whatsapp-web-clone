@@ -73,16 +73,23 @@ if config_env() == :prod do
 
   config :chat, :dns_cluster_query, System.get_env("DNS_CLUSTER_QUERY")
 
-  config :chat, ChatWeb.Endpoint,
-    url: [host: host, port: 443, scheme: "https"],
-    http: [
+  #config :chat, ChatWeb.Endpoint,
+  #  url: [host: host, port: 443, scheme: "https"],
+  #  http: [
       # Enable IPv6 and bind on all interfaces.
       # Set it to  {0, 0, 0, 0, 0, 0, 0, 1} for local network only access.
       # See the documentation on https://bandit.hexdocs.pm/Bandit.html#t:options/0
       # for details about using IPv6 vs IPv4 and loopback vs public addresses.
-      ip: {0, 0, 0, 0, 0, 0, 0, 0}
-    ],
-    secret_key_base: secret_key_base
+   #   ip: {0, 0, 0, 0, 0, 0, 0, 0}
+   # ],
+   # secret_key_base: secret_key_base
+
+
+  # Para funcionar no Render, você precisa definir a configuração do endpoint da seguinte forma:
+  config :chat, ChatWeb.Endpoint,
+    url: [host: "phoenix-whatsapp-web-clone.onrender.com", port: 443, scheme: "https"],
+    check_origin: ["https://phoenix-whatsapp-web-clone.onrender.com"],
+    secret_key_base: System.get_env("SECRET_KEY_BASE")
 
   # ## SSL Support
   #
